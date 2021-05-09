@@ -7,12 +7,16 @@ const ingredients = [
   'Приправы',
 ];
 
-const items = ingredients.map(ingredient => {
-    const itemEl = document.createElement('li');
-    itemEl.textContent = ingredient;
+const makeItems = items => {
+   return items.map(item => {
+        const itemEl = document.createElement('li');
+        itemEl.textContent = item;
 
-    return itemEl;
-})
+        return itemEl;
+    })
+}
+
+const items = makeItems(ingredients);
 
 const ingredientsRef = document.querySelector('#ingredients');
 ingredientsRef.append(...items);
